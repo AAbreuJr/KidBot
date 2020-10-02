@@ -5,16 +5,18 @@ class AddGame extends Component {
     state = { 
         invalidForm: true,
         formData: {
-            nameOfTrip: [],
-            location: [],
-            departs: [],
+            nameOfGame: [],
+            subject: [],
+            question1: [],
+            question2: [],
+            question3: [],
             
         }
     }
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.handleAddTrip(this.state.formData)
+        this.props.handleAddGame(this.state.formData)
     }
 
     handleChange = e => {
@@ -38,23 +40,23 @@ class AddGame extends Component {
                         <div className="row">
                             <div className="input-field col s12">
                             <label>Name Of Game:</label>
-                            <input name="nameOfTrip" id="nameOfTrip" type="text" className="active" value={this.state.formData.nameOfGame} onChange={this.handleChange} />
+                            <input name="nameOfGame" id="nameOfGame" type="text" className="active" value={this.state.formData.nameOfGame} onChange={this.handleChange} />
                             <br/>
                             <br/>
                             <label>Subject:</label>
-                            <input name="location" id="location" type="text" className="active" value={this.state.formData.subject} onChange={this.handleChange} />
+                            <input name="subject" id="subject" type="text" className="active" value={this.state.formData.subject} onChange={this.handleChange} />
                             <br />
                             <br/>
                             <label>Questions:</label>
                             <br/>
                             <br/>
-                            1: <input name="questions" id="questions" type="text" className="active" value={this.state.formData.question} onChange={this.handleChange} />
+                            1: <input name="question1" id="questions" type="text" className="active" value={this.state.formData.question} onChange={this.handleChange} />
                             <br/>
                             <br/>
-                            2: <input name="questions" id="questions" type="text" className="active" value={this.state.formData.question} onChange={this.handleChange} />
+                            2: <input name="question2" id="questions" type="text" className="active" value={this.state.formData.question} onChange={this.handleChange} />
                             <br/>
                             <br/>
-                            3: <input name="questions" id="questions" type="text" className="active" value={this.state.formData.question} onChange={this.handleChange} />
+                            3: <input name="question3" id="questions" type="text" className="active" value={this.state.formData.question} onChange={this.handleChange} />
                             </div>
                         </div>
                         <br/>

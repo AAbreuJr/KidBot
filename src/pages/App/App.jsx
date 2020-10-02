@@ -6,13 +6,16 @@ import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from "../Users/Users";
 import "./App.css";
+import MyGamesPage from '../MyGames/MyGames'
 import AddGame from "../AddGame/AddGame";
 import MathGame from "../MathGame/MathGame";
 import ScienceGame from "../ScienceGame/ScienceGame"
 import SSGame from "../SSGame/SSGame"
+import * as MyGameAPI from '../../services/myGame-api';
 
 class App extends Component {
   state = {
+    myGames: [],
     user: authService.getUser(),
   };
 
@@ -24,6 +27,20 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({ user: authService.getUser() });
   };
+
+  handleAddGame = async newGameData => {
+    const newGame = await MyGameAPI.create(newGameData);
+    newGame.addedBy = {name: this.state.user.name, _id: this.state.user._id}
+    this.setState(state => ({
+      myGames: [...state.myGames, newGame]
+    }), () => this.props.history.push('/games')) 
+  }
+
+  async componentDidMount() {
+    const myGames = await MyGameAPI.getAll();
+    console.log(myGames)
+    this.setState({ myGames })
+  }
 
   render() {
     const {user} = this.state
@@ -67,10 +84,23 @@ class App extends Component {
           path="/users"
           render={() => (user ? <Users /> : <Redirect to="/login" />)}
         />
+        <Route
+        exact 
+        path='/games' render={() =>
+        authService.getUser() ?
+        <MyGamesPage
+        myGames={this.state.myGames}
+        user={this.state.user}
+        />
+        :
+        <Redirect to='/' />
+      } />
         <Route 
         exact
         path='/addgame' render={() =>
-        <AddGame />
+        <AddGame 
+        handleAddGame={this.handleAddGame}
+        />
         }
         />
         <Route 
