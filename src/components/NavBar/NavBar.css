@@ -1,0 +1,25 @@
+.navbar-brand {
+    width: 100%;
+    background: #003366;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+
+.navbar-nav {
+    flex: 1;
+    margin: auto !important;
+    display: inline;
+    justify-content: space-between;
+}
+
+.image-container {
+    margin: 0%;
+}
+
+.logoutBtn {
+    color: white;
+}

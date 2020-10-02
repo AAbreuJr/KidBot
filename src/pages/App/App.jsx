@@ -6,6 +6,10 @@ import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from "../Users/Users";
 import "./App.css";
+import AddGame from "../AddGame/AddGame";
+import MathGame from "../MathGame/MathGame";
+import ScienceGame from "../ScienceGame/ScienceGame"
+import SSGame from "../SSGame/SSGame"
 
 class App extends Component {
   state = {
@@ -14,7 +18,7 @@ class App extends Component {
 
   handleLogout = () => {
     authService.logout();
-    this.setState({ user: null });
+    this.setState({ user: [] });
   };
 
   handleSignupOrLogin = () => {
@@ -29,9 +33,12 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={() => (
+          render={({ history }) => (
             <main>
-              <h1>Welcome. This is an authorization template.</h1>
+              <Login
+                history={history}
+                handleSignupOrLogin={this.handleSignupOrLogin}
+              />
             </main>
           )}
         />
@@ -59,6 +66,30 @@ class App extends Component {
           exact
           path="/users"
           render={() => (user ? <Users /> : <Redirect to="/login" />)}
+        />
+        <Route 
+        exact
+        path='/addgame' render={() =>
+        <AddGame />
+        }
+        />
+        <Route 
+        exact
+        path='/math-game' render={() =>
+        <MathGame />
+        }
+        />
+        <Route 
+        exact
+        path='/science-game' render={() =>
+        <ScienceGame />
+        }
+        />
+        <Route 
+        exact
+        path='/ss-game' render={() =>
+        <SSGame />
+        }
         />
       </>
     );

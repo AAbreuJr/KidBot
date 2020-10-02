@@ -1,26 +1,33 @@
-import React from 'react';
+import React, {Link} from 'react';
+import './NavBar.css'
 
 const NavBar = ({ user, handleLogout }) => {
     return (
     <>
       {user ?
-        <nav>
-          <div className="nav-wrapper">
-            <ul id="nav-mobile" className="right">
-              <li><a href=" " className="nav-link">Welcome, {user.name}</a></li>
-              <li><a href="/users" className="nav-link">Users</a></li>
-              <li><a href=" " className="nav-link" onClick={handleLogout}>Log Out</a></li>
-            </ul>
-          </div>
+        <nav className="navbar-nav">
+          <div>
+            <span className="navbar-brand">
+             <div className="d-flex justify-content-around"> {user.name} </div> 
+             <div><a href="/games">Your Games</a></div>
+              <div><a href="/addgame">Add A Game</a></div>
+              <div><a href="/math-game">Math</a></div>
+              <div><a href="/science-game">Science</a></div>
+              <div><a href="/ss-game">Social Studies</a></div>
+              <a className='logoutBtn' href='/' onClick={handleLogout}>
+                Log Out
+              </a>
+              </span>
+            </div>
         </nav>
       :
         <nav>
           <div className="nav-wrapper">
-            <ul id="nav-mobile" className="right">
-              <li><a href="/login" className="nav-link">Log In</a></li>
-              <li><a href="/users" className="nav-link">Users</a></li>
-              <li><a href="/signup" className="nav-link">Sign Up</a></li>
-            </ul>
+            <span  className="navbar-brand">
+              <div className=""><a href="/login" ></a></div>
+              
+              <div><a href="/signup" className="nav-link"></a></div>
+            </span>
           </div>
         </nav>
       }

@@ -4,4 +4,19 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  font-family: 'Delius', cursive;
+}
+
+.card {
+  border-radius: 30px;
+  background-color: turquoise;
+  width: 18rem;
+}
+
+.logIn {
+  background-color: blue;
+  border-radius: 10px;
+  padding: 4px 20px ;
+  color: white;
+  border: 0;
 }

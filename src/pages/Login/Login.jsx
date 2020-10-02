@@ -17,12 +17,12 @@ class LoginPage extends Component {
 
   handleSubmit = async (e) => {
     const { history, handleSignupOrLogin } = this.props;
-    e.preventDefault();
+      e.preventDefault();
     try {
       await authService.login(this.state);
       // Let <App> know a user has signed up!
       handleSignupOrLogin();
-      history.push("/");
+      history.push("/index");
     } catch (err) {
       // Use a modal or toast in your apps instead of alert
       alert('Invalid Credentials!');
@@ -32,32 +32,41 @@ class LoginPage extends Component {
   render() {
     const {email, pw} = this.state
     return (
-      <main className="Login">
-        <h3>Log In</h3>
-        <form autoComplete="off" onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            autoComplete="off"
-            id="email"
-            value={email}
-            name="email"
-            onChange={this.handleChange}
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="password"
-            autoComplete="off"
-            id="password"
-            value={pw}
-            name="pw"
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <button className="btn green">Log In</button>&nbsp;&nbsp;&nbsp;
-          <Link className="btn red" to="/">
-            Cancel
-          </Link>
-        </form>
+      <main>
+        <div className="card">
+          <div className="card-body">
+            <h3>Log In to KidBot</h3>
+            <form autoComplete="off" onSubmit={this.handleSubmit}>
+            <label className="text" htmlFor="email">Email</label>
+              <br/>
+            <input className="email"
+              type="text"
+              autoComplete="off"
+              id="email"
+              value={email}
+              name="email"
+              onChange={this.handleChange}
+            />
+              <br/>
+              <br/>
+            <label className="text" htmlFor="password">Password</label>
+              <br/>
+            <input
+              type="password"
+              autoComplete="off"
+              id="password"
+              value={pw}
+              name="pw"
+              onChange={this.handleChange}
+            />
+              <br/>
+              <br></br>
+            <button className="logIn">Log In</button>
+              <br/>
+              <br></br>
+            </form>
+          </div>
+        </div>
       </main>
     );
   }
