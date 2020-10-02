@@ -13,10 +13,10 @@ import ScienceGame from "../ScienceGame/ScienceGame"
 import SSGame from "../SSGame/SSGame"
 import * as MyGameAPI from '../../services/myGame-api';
 // Added.
-import logo from './images/01.png'
+import logo from '../../images/01.png'
 import 'semantic-ui-css/semantic.min.css'
 import { Grid, Divider, Header, Image, Segment } from 'semantic-ui-react'
-import QuizPage from './pages/QuizPage/QuizPage'
+import QuizPage from '../../pages/QuizPage/QuizPage'
 
 // Added.
 const qNo = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
@@ -91,7 +91,9 @@ class App extends Component {
     const { activeItem } = this.state
     return (
       <>
+      <NavBar user={user} handleLogout={this.handleLogout} />
 
+{/* Added. */}
 <div className='App'>
   <Segment inverted color='blue'>
     <Header as='h1' floated='left'>
@@ -125,7 +127,7 @@ class App extends Component {
         
 
      
-        <NavBar user={user} handleLogout={this.handleLogout} />
+        
         <Route
           exact
           path="/"
