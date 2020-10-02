@@ -91,43 +91,7 @@ class App extends Component {
     const { activeItem } = this.state
     return (
       <>
-      <NavBar user={user} handleLogout={this.handleLogout} />
-
-{/* Added. */}
-<div className='App'>
-  <Segment inverted color='blue'>
-    <Header as='h1' floated='left'>
-      Quiz Page
-    </Header>
-    <Divider clearing />
-      <Grid columns={2} centered>
-        <Grid.Column>
-          <Image centered
-              height='400' 
-              src={logo} 
-              color='blue'
-            />
-          <Header className= 'title' as='h1'>
-            KidBot: The Student Quiz App
-          </Header>
-        </Grid.Column> 
-      </Grid>
-  </Segment>
-  </div>
-  <br></br>
-    <main>
-      <QuizPage 
-        qNo={qNo}
-        quizIdx={this.state.quizIdx}
-        handleSummon={this.handleSummon}
-        testArray={testArray}
-        answerArray={answerArray}
-        />
-    </main>        
-        
-
-     
-        
+      <NavBar user={user} handleLogout={this.handleLogout} />    
         <Route
           exact
           path="/"
@@ -202,6 +166,12 @@ class App extends Component {
         exact
         path='/ss-game' render={() =>
         <SSGame />
+        }
+        />
+        <Route 
+        exact
+        path='/quiz-game' render={() =>
+        <QuizPage />
         }
         />
       </>
