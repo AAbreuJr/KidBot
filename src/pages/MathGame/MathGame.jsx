@@ -5,13 +5,13 @@ const MathGames = () => {
         <>
         <h1>Math Games</h1>
         <li>
-            Game 1 
+            <a href="/math/game1">Game 1</a>
         </li>
         <li>
-            Game 2 
+            <a href="/math/game2">Game 2</a>
         </li>
         <li>
-            Game 3 
+            <a href="/math/game3">Game 3</a>
         </li>
         </>
      );
