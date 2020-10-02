@@ -1,28 +1,26 @@
-.AddGame {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-  }
-  
-  .card {
-    border-radius: 30px;
-    background-color: rgb(236, 215, 143);
-  }
-  
-  .CreateGame {
-    background-color: #a97d5d;
-    border-radius: 10px;
-    padding: 4px 20px ;
-    color: white;
-    border: 0;
-  }
-  
-  .AddGameTitle {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-  }
+div.card {
+  border-radius: 30px;
+  width: 18rem;
+  margin: auto;
+  background: #2E1C75;
+}
+
+div.card-body {
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.CreateGame {
+  background: #3F878B;
+  width: 200px;
+  border-radius: 7px;
+  padding: 4px 20px ;
+  color: white;
+  border: 0;
+}
+
+.title {
+  color: #3F878B;
+  margin-top: 100px; 
+}

@@ -1,22 +1,35 @@
-.LoginPage {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-  font-family: 'Delius', cursive;
+div.card {
+  border-radius: 30px;
+  width: 18rem;
+  margin: auto;
 }
 
-.card {
-  border-radius: 30px;
-  background-color: turquoise;
-  width: 18rem;
+.card-body {
+  color: black;
 }
 
 .logIn {
-  background-color: blue;
-  border-radius: 10px;
+  background: #3F878B;
+  width: 200px;
+  border-radius: 7px;
   padding: 4px 20px ;
   color: white;
   border: 0;
+}
+
+.title {
+  color: #3F878B;
+  margin-top: 100px; 
+}
+
+#LogInWord {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 41px;
+  color: #3F878B;
+}
+
+.email {
+  color: black;
 }

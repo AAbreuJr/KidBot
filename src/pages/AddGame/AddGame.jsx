@@ -33,6 +33,7 @@ class AddGame extends Component {
         return ( 
             <>
                 <h1 className='AddGameTitle'>Add A Game</h1>
+                <img src="https://i.imgur.com/iqhzgXm.png" alt=""/>
                 <div className="AddGame">
                 <div className="card">
                 <div className="card-body">

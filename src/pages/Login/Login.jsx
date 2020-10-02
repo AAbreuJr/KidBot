@@ -22,7 +22,7 @@ class LoginPage extends Component {
       await authService.login(this.state);
       // Let <App> know a user has signed up!
       handleSignupOrLogin();
-      history.push("/games");
+      history.push("/addgame");
     } catch (err) {
       // Use a modal or toast in your apps instead of alert
       alert('Invalid Credentials!');
@@ -33,9 +33,13 @@ class LoginPage extends Component {
     const {email, pw} = this.state
     return (
       <main>
-        <div className="card">
+        <h1 className='title'>KidBot</h1>
+        <h7>The Lesson Plan Activity Builder</h7>
+        <br/>
+        <img src="https://i.imgur.com/iqhzgXm.png" alt=""/>
+       
           <div className="card-body">
-            <h3>Log In to KidBot</h3>
+            <h3 id='LogInWord'>Log In</h3>
             <form autoComplete="off" onSubmit={this.handleSubmit}>
             <label className="text" htmlFor="email">Email</label>
               <br/>
@@ -66,7 +70,6 @@ class LoginPage extends Component {
               <br></br>
             </form>
           </div>
-        </div>
       </main>
     );
   }
